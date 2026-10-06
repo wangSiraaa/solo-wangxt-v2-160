@@ -1,0 +1,132 @@
+:root {
+  --bg: #f4f5f7;
+  --panel: #ffffff;
+  --ink: #1f2430;
+  --muted: #6b7280;
+  --line: #e3e6eb;
+  --blue: #2f5fd0;
+  --red: #c0392b;
+  --amber: #b7791f;
+  --green: #2f8f4e;
+  --chip: #eef2fb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 14px/1.55 "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+}
+
+header.topbar {
+  background: linear-gradient(120deg, #1e3a8a, #2f5fd0);
+  color: #fff;
+  padding: 18px 28px;
+}
+header.topbar h1 { margin: 0; font-size: 20px; }
+header.topbar p { margin: 4px 0 0; opacity: .85; font-size: 13px; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 18px;
+  padding: 18px 28px 60px;
+  align-items: start;
+}
+@media (max-width: 1100px) { .layout { grid-template-columns: 1fr; } }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+.panel h2 {
+  font-size: 15px;
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.panel h3 { font-size: 13.5px; margin: 14px 0 6px; color: #33415c; }
+
+table { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 5px 8px;
+  text-align: right;
+  white-space: nowrap;
+}
+th { background: #f7f8fb; font-weight: 600; position: sticky; top: 0; }
+th.rowhead, td.rowhead { text-align: left; background: #fafbfe; font-weight: 600; }
+td.null { color: #b6bcc8; text-align: center; background: repeating-linear-gradient(45deg,#fff,#fff 5px,#f6f7fa 5px,#f6f7fa 10px); }
+td.missing-cell { outline: 2px solid var(--amber); outline-offset: -2px; }
+
+.heat { background: rgba(47,95,208,var(--h,0)); }
+.heat.cost { background: rgba(192,57,43,var(--h,0)); }
+
+.chip {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--chip);
+  color: #33446e;
+  font-size: 11.5px;
+  margin-right: 6px;
+}
+.chip.benefit { background: #e7f3ec; color: var(--green); }
+.chip.cost { background: #fbeae8; color: var(--red); }
+.chip.target { background: #fdf3e0; color: var(--amber); }
+.chip.excl { background: #eceff3; color: #8a909c; text-decoration: line-through; }
+
+label.opt { display: flex; align-items: center; gap: 8px; margin: 6px 0; font-size: 13px; }
+select, input[type=number], input[type=text] {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 13px;
+  background: #fff;
+}
+button {
+  border: 1px solid var(--blue);
+  background: var(--blue);
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+button.ghost { background: #fff; color: var(--blue); }
+button:disabled { opacity: .5; cursor: default; }
+
+.warnbox { border-left: 4px solid var(--amber); background: #fffaf0; padding: 8px 12px; border-radius: 0 6px 6px 0; margin: 6px 0; font-size: 12.5px; }
+.warnbox.red { border-color: var(--red); background: #fdf3f2; }
+.warnbox.blue { border-color: var(--blue); background: #f2f6fe; }
+
+.rank1 { font-weight: 700; color: var(--green); }
+.shift-pos { color: var(--green); font-weight: 700; }
+.shift-neg { color: var(--red); font-weight: 700; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+
+.muted { color: var(--muted); font-size: 12px; }
+.disclaimer {
+  background: #fff8e1;
+  border: 1px dashed #d9a441;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 12.5px;
+  margin-bottom: 16px;
+}
+.step-notes { margin: 6px 0 0; padding-left: 18px; }
+.step-notes li { font-size: 12px; color: #475069; margin: 2px 0; }
+.scrollx { overflow-x: auto; }
+.pill-row { margin: 4px 0 10px; }
+.bar { height: 8px; border-radius: 4px; background: #e8ecf4; position: relative; min-width: 60px; }
+.bar > span { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--blue); }
+.bar > span.red { background: var(--red); }
+.right-note { float: right; font-weight: 400; font-size: 11.5px; color: var(--muted); }

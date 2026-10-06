@@ -1,0 +1,9 @@
+{
+  "/criteria": { "target": "http://localhost:8000" },
+  "/candidates": { "target": "http://localhost:8000" },
+  "/values": { "target": "http://localhost:8000" },
+  "/versions": { "target": "http://localhost:8000" },
+  "/analyze": { "target": "http://localhost:8000" },
+  "/reversal": { "target": "http://localhost:8000" },
+  "/health": { "target": "http://localhost:8000" }
+}

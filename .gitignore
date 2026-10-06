@@ -23,3 +23,9 @@ venv/
 __pycache__/
 .pytest_cache/
 .DS_Store
+
+# local SQLite fallback
+*.db
+backend/mcda.db
+dist/
+.angular/
